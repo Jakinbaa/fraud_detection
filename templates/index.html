@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Fraud Detection</title>
+</head>
+<body>
+    <h1>Fraud Detection System</h1>
+    <form action="{{ url_for('main.get_prediction') }}" method="post">
+        <label for="amount">Transaction Amount:</label>
+        <input type="text" id="amount" name="amount" required><br><br>
+        <label for="location">Location:</label>
+        <input type="text" id="location" name="location" required><br><br>
+        <label for="purchase_type">Type of Purchase:</label>
+        <input type="text" id="purchase_type" name="purchase_type" required><br><br>
+        <input type="submit" value="Predict">
+    </form>
+</body>
+</html>
